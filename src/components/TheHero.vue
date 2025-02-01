@@ -1,7 +1,8 @@
 <template>
     <section class="fluid" :style="{background: `url(${bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: '50% 50%'}">
         <Waypoint @change="onChange">
-            <div class="hero row" :class="{animate: animate.animateNow}">
+            <div v-animate-inview="'fadeInSlide'"
+                 class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 row hero">
                 <div class="content">
                     <h2>
                         The AI-Driven Crypto Fund

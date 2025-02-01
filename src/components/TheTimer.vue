@@ -1,6 +1,7 @@
 <template>
     <section class="timer">
-            <Waypoint @change="onChange" tag="div" class="row">
+            <div v-animate-inview="'fadeInSlide'"
+                      class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 row">
                 <div class="time" :class="{animate: animate.animateNow}">
                     <div class="card">
                         {{ timer.days }}
@@ -20,7 +21,7 @@
     <!--                    Until something significant happens.-->
     <!--                </p>-->
                 </div>
-            </Waypoint>
+            </div>
 
 
     </section>
@@ -91,7 +92,7 @@ const timer = reactive({
 
       span {
         color: rgba(255, 255, 255, 0.50);
-        font-size: 14px;
+        font-size: 12px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;

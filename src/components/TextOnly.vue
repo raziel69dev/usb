@@ -1,5 +1,6 @@
 <template>
-    <section class="text-only row">
+    <section v-animate-inview="'fadeInSlide'"
+             class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 row text-only">
         <h2>
             <slot name="headline"></slot>
         </h2>

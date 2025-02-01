@@ -1,6 +1,8 @@
 <template>
-    <section class="about row">
-        <Waypoint @change="onChange">
+    <section v-animate-inview="'fadeInSlide'"
+             class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 row about">
+        <div v-animate-inview="'fadeInSlide'"
+             class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 content">
             <div class="heading" :class="{animate: animate.animateNow}">
                 <h2>
                     ABOUT
@@ -9,10 +11,11 @@
                     Welcome to the USBIF Crypto Fund – the official U.S. Government-backed cryptocurrency investment platform revolutionizing the future of finance and wealth management. Designed to be the cornerstone of America's economic evolution, USBIF leverages cutting-edge AI-driven trading technology to actively manage a diversified portfolio of 100 top-performing cryptocurrencies.
                 </p>
             </div>
-        </Waypoint>
+        </div>
 
         <transition-group tag="div" class="cards">
-            <div class="card" v-for="card of cards" :key="card.headline" :class="{animate: animate.animateNow}">
+            <div v-animate-inview="'fadeInSlide'"
+                 class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 card" v-for="card of cards" :key="card.headline" :class="{animate: animate.animateNow}">
                 <inline-svg :src="card.icon" />
                 <div class="headline">
                     {{ card.headline }}
@@ -62,12 +65,14 @@ const cards = ref([{
 
 </script>
 <style scoped lang="scss">
+
 .about {
   margin-top: 120px;
   margin-bottom: 60px;
   flex-direction: column;
   justify-content: center;
   gap: 40px;
+
 
   .heading {
     display: flex;
@@ -88,6 +93,7 @@ const cards = ref([{
     gap: 20px;
     box-sizing: border-box;
 
+
     .card {
       display: flex;
       width: 23%;
@@ -99,6 +105,7 @@ const cards = ref([{
       box-sizing: border-box;
       border-radius: 14px;
       border: 1.8px solid rgba(206, 225, 231, 0.10);
+      opacity: 0;
 
       .headline {
         color: var(--Light, #CEE1E7);

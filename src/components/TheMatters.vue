@@ -1,7 +1,8 @@
 <template>
     <section class="matters" :style="{background: `url(${bg} `, backgroundRepeat: 'no-repeat', backgroundSize: 'cover',
-    backgroundPosition: '50% 50%', backgroundBlendMode: 'soft-light, normal'}">
-        <div class="row">
+    backgroundPosition: '50% 50%', backgroundBlendMode: 'soft-light, normal'}" >
+        <div  v-animate-inview="'fadeInSlide'"
+             class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 row">
             <div class="content">
                 <div class="subline">
                     This fund is designed to give everyone a real shot at achieving the American Dream

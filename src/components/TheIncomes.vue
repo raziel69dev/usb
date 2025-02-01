@@ -1,6 +1,7 @@
 <template>
     <section class="fluid">
-        <div class="hero row">
+        <div v-animate-inview="'fadeInSlide'"
+             class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 row hero">
             <div class="content">
                 <div class="subline">
                     Experience variable
@@ -80,6 +81,8 @@ import TheButton from "@/components/TheButton.vue";
 @media screen and (max-width: 768px) {
   .fluid {
     padding-bottom: 200px;
+    margin-bottom: -200px;
+    margin-top: -60px;
     .hero {
       flex-direction: column;
       text-align: center;

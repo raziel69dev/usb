@@ -33,7 +33,7 @@
                   </span>
         </the-button>
 
-
+        <teleport to="body">
         <div class="mobile-menu" v-show="!menu.collapsed">
 
             <div class="absolute-button">
@@ -78,6 +78,7 @@
                 Control your future with the USBIF Crypto Fund – the cornerstone of a revolutionary new America. Powered by cutting-edge AI and real-time data analysis, USBIF processes petabytes of information to drive smarter investments and unparalleled financial growth.
             </p>
         </div>
+        </teleport>
 
     </nav>
 </template>
@@ -96,12 +97,12 @@ const toggleMenu = (hide) => {
     if (hide) {
         menu.collapsed = hide
         document.body.style.maxHeight = 'auto'
-        document.body.style.overflow = 'hidden auto'
+        document.body.style.overflow = 'hidden scroll'
 
     } else {
         menu.collapsed = hide
         document.body.style.maxHeight = '100vh'
-        document.body.style.overflow = 'hidden'
+        document.body.style.overflow = 'hidden hidden'
     }
 }
 </script>
@@ -156,6 +157,10 @@ const toggleMenu = (hide) => {
   gap: 40px;
   flex-shrink: 0;
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  max-width: 100vw;
   display: flex;
   justify-content: start;
   backdrop-filter: blur(5px);
@@ -211,14 +216,9 @@ const toggleMenu = (hide) => {
       justify-content: end;
       max-width: 100%;
       gap: 20px;
-      position: relative;
 
       .links {
         display: none;
-
-        .link {
-
-        }
       }
     }
   .tg {

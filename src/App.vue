@@ -13,7 +13,8 @@ import TheFooterMenu from "@/components/TheFooterMenu.vue";</script>
 
 
 <template>
-  <header class="row">
+  <header v-animate-inview="'fadeInSlide'"
+          class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 row">
       <div class="logo">
           <img :src="logo" alt="" >
           <span>USBIF</span>
@@ -26,7 +27,7 @@ import TheFooterMenu from "@/components/TheFooterMenu.vue";</script>
       <the-hero />
 
 
-      <the-timer />
+      <the-timer  />
 
       <the-about />
 
@@ -55,8 +56,9 @@ import TheFooterMenu from "@/components/TheFooterMenu.vue";</script>
 
       <the-assets />
   </main>
-    <footer>
-        <div class="row">
+    <footer >
+        <div v-animate-inview="'fadeInSlide'"
+             class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 row">
             <div class="logo">
                 <img :src="logoBlack" alt="" >
                 <p>

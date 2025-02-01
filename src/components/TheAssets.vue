@@ -1,6 +1,7 @@
 <template>
     <section class="assets">
-        <div class="row">
+        <div v-animate-inview="'fadeInSlide'"
+             class="w-1/2 h-96 bg-gray-500 mx-auto opacity-0 row assets">
             <h2>Top 100 Crypto assets</h2>
             <div class="coins">
                 <div class="images">

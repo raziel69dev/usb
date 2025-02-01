@@ -2,14 +2,13 @@
 * {
   margin: 0;
   padding: 0;
-
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'SF Pro Display', sans-serif;
   width: 100%;
   min-height: 100vh;
-
   border: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden scroll;
   background: linear-gradient(180deg, #3D627A -70.2%, #1E2C35 100%);
@@ -61,12 +60,39 @@ p {
   flex-shrink: 0;
   margin: 0 auto;
   box-sizing: border-box;
+  opacity: 0;
 }
 
 
 .animate {
   animation: slideIn .3s linear;
 }
+
+.fadeInSlide {
+  animation: fadeInSlide 1.5s ease forwards 0.5s;
+}
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translate3d(0%, 30%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade {
+  animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+  to {
+    opacity: 0.25;
+  }
+}
+
+
 @keyframes slideIn {
   0% {transform: translateY(150px); opacity: 0}
   100% {transform: translateY(0); opacity: 1}
